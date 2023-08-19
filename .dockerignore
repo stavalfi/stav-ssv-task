@@ -1,0 +1,14 @@
+.history
+.git
+winston.log.*
+node_modules
+logs
+cache
+.next
+artifacts
+artifacts-zk
+cache-zk
+docker-compose.yml
+dockerfile
+grafana
+prometheus

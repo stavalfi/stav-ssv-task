@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # uncommnent if you want to edit the code-base
+  # ssv-task:
+  #   image: stavalfi/ssv-task:1.0.0
+  #   container_name: ssv-task
+  #   build: .
+  #   command: sh -c "yarn tsc && yarn start:production"
+  #   ports:
+  #     - '8080:8080'
+  ssv-task:
+    image: stavalfi/ssv-task:1.0.0
+    container_name: ssv-task
+    command: sh -c "yarn start:production"
+    ports:
+      - '8080:8080'
+  prometheus:
+    image: prom/prometheus:v2.46.0
+    container_name: prometheus-dev
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./prometheus:/etc/prometheus
+  grafana:
+    image: grafana/grafana-enterprise:9.5.8
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./grafana:/var/lib/grafana

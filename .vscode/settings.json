@@ -1,0 +1,12 @@
+{
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "json.format.enable": false,
+  "files.associations": {
+    ".prettierrc": "json"
+  },
+  "terminal.integrated.scrollback": 100000000
+}

@@ -1,0 +1,16 @@
+# this file is used for local development only
+
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+rule_files:
+  # - "first.rules"
+  # - "second.rules"
+
+scrape_configs:
+  - job_name: prometheus
+    scrape_timeout: 4s
+    static_configs:
+      # dont delete endpoints, just add more. "host.docker.internal" === localhost
+      - targets: ['host.docker.internal:8080', 'localhost:8080', '127.0.0.1:8080']

@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "signal": "SIGTERM",
+  "exec": "yarn start:dev"
+}
